@@ -2,118 +2,307 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Education Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bright Minds Learning Center — English & Math Courses in Tashkent</title>
+  <meta name="description" content="Bright Minds Learning Center in Tashkent offers English and Math courses for school children and adults. Small groups, expert teachers, flexible schedules. Enroll online." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL: replace with your real domain -->
+  <link rel="canonical" href="https://www.example.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.example.com/" />
+  <meta property="og:title" content="Bright Minds Learning Center — English & Math Courses in Tashkent" />
+  <meta property="og:description" content="Small groups, expert teachers, flexible schedules. Enroll online." />
+  <meta property="og:image" content="/assets/og-cover.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bright Minds Learning Center — English & Math Courses in Tashkent" />
+  <meta name="twitter:description" content="Small groups, expert teachers, flexible schedules. Enroll online." />
+  <meta name="twitter:image" content="/assets/og-cover.jpg" />
+
   <link rel="stylesheet" href="./style.css">
+
+  <!-- Preconnect hints (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Favicon (replace paths) -->
+  <link rel="icon" href="/assets/favicon.ico" />
+
+  <!-- JSON-LD: Organization / LocalBusiness (Education) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Bright Minds Learning Center",
+    "url": "https://www.example.com/",
+    "logo": "https://www.example.com/assets/logo.png",
+    "sameAs": [
+      "https://instagram.com/brightminds",
+      "https://t.me/brightminds"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12 Mustaqillik Ave",
+      "addressLocality": "Tashkent",
+      "postalCode": "100000",
+      "addressCountry": "UZ"
+    },
+    "telephone": "+998-90-000-00-00"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which subjects do you teach?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer English and Math courses for grades 1–11 and adult learners, with preparation for IELTS and olympiads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are you located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are in central Tashkent (12 Mustaqillik Ave). See the map in the Contacts section."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I enroll?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fill in the short registration form on this page. Our team will call you to confirm your schedule."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 <body>
-  <header>
-    <div class="logo">My Logo</div>
-    <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <div></div>
-      <div></div>
-      <div></div>
+  <header role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Bright Minds Learning Center home">
+        <img src="./assetts/logo.png" alt="Bright Minds Learning Center logo" width="36" height="36" loading="eager" />
+        Bright Minds
+      </a>
+
+      <nav aria-label="Primary" role="navigation">
+        <button class="hamburger" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle menu" onclick="toggleMenu(this)">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="desktop-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#teachers">Our Teachers</a></li>
+          <li><a href="#branches">Branches</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>
+        <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+          <a href="#home" onclick="closeMenu()">Home</a>
+          <a href="#courses" onclick="closeMenu()">Courses</a>
+          <a href="#teachers" onclick="closeMenu()">Our Teachers</a>
+          <a href="#branches" onclick="closeMenu()">Branches</a>
+          <a href="#contacts" onclick="closeMenu()">Contacts</a>
+        </div>
+      </nav>
     </div>
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#contacts">Contacts</a>
-    </nav>
   </header>
 
-  <div class="registration">
-  <h2>Registration Form</h2>
-  <form action="https://formspree.io/f/meozrabl" method="POST">
-    <input type="text" name="name" placeholder="Name" required />
-    <input type="email" name="email" placeholder="Email" required />
-    <input type="tel" name="phone" placeholder="Phone" />
-    <button type="submit">Register</button>
-  </form>
-</div>
+  <main id="home" role="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <h1 id="hero-title">English & Math Courses in Tashkent</h1>
+          <p class="lead">Small groups. Expert teachers. Flexible schedules for grades 1–11 and adults. Prepare for exams like IELTS and olympiads with proven methods.</p>
+          <div class="card" aria-labelledby="form-title">
+            <h3 id="form-title">Enroll Now</h3>
+            <form action="https://formspree.io/f/meozrabl" method="POST" autocomplete="on">
+              <label class="sr-only" for="name">Name</label>
+              <input id="name" class="form-control" name="name" type="text" placeholder="Your full name" required />
 
-  <section id="courses">
-    <h2>About Courses</h2>
-    <div class="carousel-container">
-      <button class="carousel-btn left" onclick="moveCarousel(this, -1)">&#10094;</button>
-      <div class="carousel-track">
-        <div class="carousel-item">Course 1</div>
-        <div class="carousel-item">Course 2</div>
-        <div class="carousel-item">Course 3</div>
+              <label class="sr-only" for="email">Email</label>
+              <input id="email" class="form-control" name="email" type="email" placeholder="Email" required />
+
+              <label class="sr-only" for="phone">Phone</label>
+              <input id="phone" class="form-control" name="phone" type="tel" placeholder="Phone (optional)" inputmode="tel" />
+
+              <button class="btn" type="submit">Register</button>
+            </form>
+          </div>
+        </div>
+        <div>
+          <img src="./assetts/hero-student.png" alt="Students studying together at Bright Minds Learning Center" loading="lazy" class="stud-img" />
+        </div>
       </div>
-      <button class="carousel-btn right" onclick="moveCarousel(this, 1)">&#10095;</button>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses" aria-labelledby="courses-title">
+      <div class="container">
+        <h2 id="courses-title">About Courses</h2>
+        <p class="lead">We run intensive and regular programs with a focus on results and confidence.</p>
+
+        <div class="carousel" role="region" aria-label="Courses carousel">
+          <button class="ctrl left" aria-label="Scroll left" onclick="scrollByAmount('#courses .track', -1)">‹</button>
+          <div class="track" id="courses-track">
+            <article class="slide" aria-label="English Beginners">
+              <span class="pill">Beginner</span>
+              <h3>English A1–A2</h3>
+              <p>Grammar, speaking, and listening for starters. 3x per week, small groups.</p>
+            </article>
+            <article class="slide" aria-label="English IELTS">
+              <span class="pill">Exam</span>
+              <h3>IELTS Prep</h3>
+              <p>Target Band 7+. Full mock tests, feedback, and vocabulary boosters.</p>
+            </article>
+            <article class="slide" aria-label="Math Olympiad">
+              <span class="pill">Advanced</span>
+              <h3>Math Olympiad</h3>
+              <p>Problem‑solving, logic, and contest strategies for grades 5–11.</p>
+            </article>
+            <article class="slide" aria-label="Math Fundamentals">
+              <span class="pill">Core</span>
+              <h3>Math Fundamentals</h3>
+              <p>Algebra and geometry foundations, weekly checkpoints and parents’ reports.</p>
+            </article>
+          </div>
+          <button class="ctrl right" aria-label="Scroll right" onclick="scrollByAmount('#courses .track', 1)">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teachers -->
+    <section id="teachers" aria-labelledby="teachers-title">
+      <div class="container">
+        <h2 id="teachers-title">Our Teachers</h2>
+        <p class="lead">Certified professionals with 5–15 years of classroom experience.</p>
+
+        <div class="carousel" role="region" aria-label="Teachers carousel">
+          <button class="ctrl left" aria-label="Scroll left" onclick="scrollByAmount('#teachers .track', -1)">‹</button>
+          <div class="track">
+            <article class="slide">
+              <img src="./assetts/teacher.png" alt="Teacher Alisher, English expert" width="260" height="180" loading="lazy" />
+              <h3>Alisher</h3>
+              <p>English expert • IELTS 8.5</p>
+            </article>
+            <article class="slide">
+              <img src="./assetts/teacher.png" alt="Teacher Dilnoza, Math Olympiad coach" width="260" height="180" loading="lazy" />
+              <h3>Dilnoza</h3>
+              <p>Math Olympiad coach</p>
+            </article>
+            <article class="slide">
+              <img src="./assetts/teacher.png" alt="Teacher Timur, IELTS speaking specialist" width="260" height="180" loading="lazy" />
+              <h3>Timur</h3>
+              <p>IELTS speaking specialist</p>
+            </article>
+             <article class="slide">
+              <img src="./assetts/teacher.png" alt="Teacher Dilnoza, Math Olympiad coach" width="260" height="180" loading="lazy" />
+              <h3>Dilnoza</h3>
+              <p>Math Olympiad coach</p>
+            </article>
+             <article class="slide">
+              <img src="./assetts/teacher.png" alt="Teacher Dilnoza, Math Olympiad coach" width="260" height="180" loading="lazy" />
+              <h3>AAAA</h3>
+              <p>Math Olympiad coach</p>
+            </article>
+            <article class="slide">
+              <img src="./assetts/teacher.png" alt="Teacher Malika, Algebra & geometry" width="260" height="180" loading="lazy" />
+              <h3>Malika</h3>
+              <p>Algebra & Geometry</p>
+            </article>
+          </div>
+          <button class="ctrl right" aria-label="Scroll right" onclick="scrollByAmount('#teachers .track', 1)">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Branches -->
+    <section id="branches" aria-labelledby="branches-title">
+      <div class="container">
+        <h2 id="branches-title">Branches</h2>
+        <div class="grid" aria-label="List of branches">
+          <article class="card">
+            <h3>Downtown (Chilonzor)</h3>
+            <p>12 Mustaqillik Ave — 3rd floor</p>
+            <p><a href="https://maps.google.com" target="_blank" rel="noopener">View on map</a></p>
+          </article>
+          <article class="card">
+            <h3>Yakkasaroy</h3>
+            <p>45 Navoi Street</p>
+            <p><a href="https://maps.google.com" target="_blank" rel="noopener">View on map</a></p>
+          </article>
+          <article class="card">
+            <h3>Mirzo-Ulug‘bek</h3>
+            <p>7 Beruniy Avenue</p>
+            <p><a href="https://maps.google.com" target="_blank" rel="noopener">View on map</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts / Footer -->
+    <section id="contacts" aria-labelledby="contacts-title">
+      <div class="container">
+        <h2 id="contacts-title">Contacts</h2>
+        <p class="lead">Have questions? Call us or message on social media.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Call us</h3>
+            <p><a href="tel:+998900000000">+998 90 000 00 00</a></p>
+            <p class="meta">Mon–Sat, 9:00–19:00 (UZT)</p>
+          </article>
+          <article class="card">
+            <h3>Social</h3>
+            <p class="social">
+              <a href="https://instagram.com/brightminds" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+              <a href="https://t.me/brightminds" target="_blank" rel="noopener" aria-label="Telegram">Telegram</a>
+            </p>
+          </article>
+          <article class="card">
+            <h3>Address</h3>
+            <address>12 Mustaqillik Ave, Tashkent 100000, Uzbekistan</address>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <div>
+        <strong>Bright Minds Learning Center</strong>
+        <div class="meta">© <span id="year"></span> Bright Minds. All rights reserved.</div>
+      </div>
+      <div class="meta">
+        <a href="#home">Back to top</a>
+      </div>
     </div>
-  </section>
-
-  <section id="teachers">
-  <h2>Our Teachers</h2>
-  <div class="carousel-container">
-    <button class="carousel-btn left" onclick="moveCarousel(this, -1)">&#10094;</button>
-    <div class="carousel-track">
-      <div class="carousel-item">
-        <img src="./assetts/person1.png" alt="Teacher 1" />
-        <h3>Teacher 1</h3>
-        <p>Subject Expert</p>
-      </div>
-      <div class="carousel-item">
-        <img src="./assetts/person1.png" alt="Teacher 2" />
-        <h3>Teacher 2</h3>
-        <p>Subject Expert</p>
-      </div>
-      <div class="carousel-item">
-        <img src="./assetts/person1.png" alt="Teacher 3" />
-        <h3>Teacher 3</h3>
-        <p>Subject Expert</p>
-      </div>
-      <div class="carousel-item">
-        <img src="./assetts/person1.png" alt="Teacher 4" />
-        <h3>Teacher 3</h3>
-        <p>Subject Expert</p>
-      </div>
-      <div class="carousel-item">
-        <img src="./assetts/person1.png" alt="Teacher 5" />
-        <h3>Teacher 3</h3>
-        <p>Subject Expert</p>
-      </div>
-      <div class="carousel-item">
-        <img src="./assetts/person1.png" alt="Teacher 5" />
-        <h3>Teacher 3</h3>
-        <p>Subject Expert</p>
-      </div>
-      <div class="carousel-item">
-        <img src="./assetts/person1.png" alt="Teacher 5" />
-        <h3>Teacher 3</h3>
-        <p>Subject Expert</p>
-      </div>
-      <div class="carousel-item">
-        <img src="./assetts/person1.png" alt="Teacher 5" />
-        <h3>Teacher 3</h3>
-        <p>Subject Expert</p>
-      </div>
-    </div>
-    <button class="carousel-btn right" onclick="moveCarousel(this, 1)">&#10095;</button>
-  </div>
-</section>
-
-  <section id="branches">
-    <h2>Branches</h2>
-    <div class="carousel-container">
-      <button class="carousel-btn left" onclick="moveCarousel(this, -1)">&#10094;</button>
-      <div class="carousel-track">
-        <div class="carousel-item">Branch 1</div>
-        <div class="carousel-item">Branch 2</div>
-        <div class="carousel-item">Branch 3</div>
-      </div>
-      <button class="carousel-btn right" onclick="moveCarousel(this, 1)">&#10095;</button>
-    </div>
-  </section>
-
-  <footer>
-    <p>Contact us: +998 XX XXX XX XX</p>
-    <a href="#instagram">Instagram</a>
-    <a href="#telegram">Telegram</a>
   </footer>
 
+  <script src="./main.js" defer></script>
 
-  <script src="./main.js"></script>
+  <noscript>
+    Your browser has JavaScript disabled. The site still works, but carousels become scrollable lists.
+  </noscript>
+
+  <!-- Optional: Google Analytics (replace with your GA tag) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX');
+  </script> -->
 </body>
 </html>

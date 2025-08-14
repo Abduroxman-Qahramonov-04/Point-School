@@ -29,5 +29,4 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(
       track.scrollBy({ left: amount, behavior: 'smooth' });
     }
 
-    // Current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
